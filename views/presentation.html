@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portafolio</title>
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,7 +15,6 @@
   <body>
     <section id="burger-display" class="burger-display">
       <section id="title-close" class="title-close">
-        <h1>Menú</h1>
         <div id="close-icon" class="close-icon">✕</div>
       </section>
       <nav>
@@ -43,10 +42,10 @@
     </section>
     <header class="container-header">
       <div class="title">
-        <img class="img" src="dist/img/title-back.png" alt="" />
+        <img class="img" src="../dist/img/title-back.png" alt="" />
         <h1 class="text">Portafolio</h1>
         <section>
-          <img class="img-divider" src="dist/img/divider.png" alt="" />
+          <img class="img-divider" src="../dist/img/divider.png" alt="" />
         </section>
       </div>
       <div id="rss" class="rss">
@@ -124,18 +123,94 @@
       <section class="container-data">
         <section class="container-data-header">
           <nav>
-            <ul id="aside-burger">
+            <ul id="aside-data">
               <li>
                 <div class="title">
-                  <h1>Presentación</h1>
-                  <p>El primer paso</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 200 300"
+                    width="200"
+                    height="300"
+                    fill="none"
+                    stroke="#0b0b0ecc"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                  >
+                    <!-- Pergamino base -->
+                    <path
+                      d="M 20 40 Q 10 10, 40 10 T 80 40 V 260 Q 80 280, 40 280 T 10 250 L 10 40"
+                      stroke="#0b0b0ecc"
+                      fill="#0b0b0ecc"
+                    />
+
+                    <!-- Parte derecha del pergamino -->
+                    <path
+                      d="M 180 40 Q 190 10, 160 10 T 120 40 V 260 Q 120 280, 160 280 T 190 250 L 190 40"
+                      stroke="#0b0b0ecc"
+                      fill="#0b0b0ecc"
+                    />
+
+                    <!-- Parte enrollada superior del pergamino -->
+                    <path
+                      d="M 20 40 Q 100 60, 180 40"
+                      stroke="#0b0b0ecc"
+                      fill="#0b0b0ecc"
+                    />
+
+                    <!-- Parte enrollada inferior del pergamino -->
+                    <path
+                      d="M 20 260 Q 100 240, 180 260"
+                      stroke="#0b0b0ecc"
+                      fill="#0b0b0ecc"
+                    />
+
+                    <!-- Sombra enrollado superior -->
+                    <path
+                      d="M 20 40 Q 100 50, 180 40"
+                      stroke="none"
+                      fill="#0b0b0ecc"
+                    />
+
+                    <!-- Sombra enrollado inferior -->
+                    <path
+                      d="M 20 260 Q 100 250, 180 260"
+                      stroke="none"
+                      fill="#0b0b0ecc"
+                    />
+                  </svg>
+                  <div>
+                    <h1>Presentación</h1>
+                    <p>El primer paso</p>
+                  </div>
                 </div>
+              </li>
+              <li class="vertical-dots">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
               </li>
               <li>
                 <div class="title">
                   <h1>Experiencia</h1>
                   <p>Una carrera en progeso</p>
                 </div>
+              </li>
+              <li class="vertical-dots">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+              </li>
+              <li>
+                <div class="title">
+                  <h1>Contacto</h1>
+                  <p>Un futuro prometedor</p>
+                </div>
+              </li>
+              <li class="vertical-dots">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
               </li>
               <li>
                 <div class="title">

@@ -9,6 +9,7 @@
   margin: 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
+  font-size: 16px;
 }
 
 body {
@@ -21,7 +22,7 @@ body {
 .burger-display {
   top: 0;
   left: 0;
-  background-color: #23202e;
+  background-color: rgb(83, 80, 78);
   color: #c4bba0;
   position: fixed;
   z-index: 999;
@@ -55,6 +56,7 @@ body {
   transition: background-color 0.3s linear;
 }
 .burger-display nav ul li .title h1 {
+  font-size: 24px;
   color: rgb(83, 80, 78);
   margin-bottom: 4px;
 }
@@ -77,11 +79,11 @@ body {
   padding: 24px;
   align-items: center;
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
 }
 .burger-display .title-close h1 {
   font-size: 24px;
-  color: #c4bba0;
+  color: rgba(11, 11, 14, 0.8);
 }
 .burger-display .title-close .close-icon {
   font-weight: bold;
@@ -96,15 +98,15 @@ body {
   justify-content: space-between;
   background-color: rgba(11, 11, 14, 0.8);
   height: 80px;
-  padding: 28px 0px 28px 0px;
+  padding: 24px 0px 24px 0px;
 }
 .container-header .title {
-  padding: 0px 0px 0px 103px;
-  font-size: 24px;
+  padding: 0px 0px 0px 100px;
   text-align: center;
   color: #c4bba0;
 }
 .container-header .title .text {
+  font-size: 36px;
   background: linear-gradient(351deg, rgb(69, 53, 39) 0%, rgb(191, 146, 106) 52%, rgb(226, 181, 123) 80%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -121,7 +123,7 @@ body {
 .container-header .img-divider {
   position: absolute;
   left: 32px;
-  top: -135px;
+  top: -140px;
   width: 300px;
   height: 250px;
 }
@@ -131,7 +133,7 @@ body {
   gap: 16px;
 }
 .container-header .rss a .icon {
-  background: rgb(7, 7, 10);
+  background: #0b0b0e;
   cursor: pointer;
   border: 1px solid rgb(83, 80, 78);
   display: flex;
@@ -140,9 +142,9 @@ body {
   align-items: center;
 }
 .container-header .rss a .icon .svg-icon {
-  width: 24px; /* Cambia el tamaño del SVG */
-  height: auto; /* Mantiene la relación de aspecto */
-  fill: rgb(226, 181, 123); /* Cambia el color del SVG */
+  width: 24px;
+  height: auto;
+  fill: rgb(226, 181, 123);
 }
 .container-header .rss a .icon:hover {
   background: rgb(45, 17, 55);
@@ -160,6 +162,7 @@ body {
 }
 
 .container-aside {
+  padding-top: 16px;
   width: 500px;
   color: white;
   display: flex;
@@ -191,15 +194,19 @@ body {
   z-index: 10;
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 56px;
 }
 .container-aside nav ul li {
-  margin: 0px 48px;
+  align-items: center;
+  margin: 0px 24px;
   border-right: 1px solid #23202e;
   display: flex;
   justify-content: start;
   background: linear-gradient(270deg, rgb(7, 7, 10) 0%, rgb(7, 7, 10) 85%, rgba(64, 57, 96, 0) 93%);
   transition: background-color 0.3s linear;
+}
+.container-aside nav ul li .title h1 {
+  font-size: 19px;
 }
 .container-aside nav ul li.active {
   border-right: 1px solid rgb(233, 121, 255);
@@ -217,6 +224,7 @@ body {
 }
 
 .container-data {
+  padding-top: 16px;
   position: relative;
   width: 100%;
   display: flex;
@@ -253,13 +261,45 @@ body {
   padding-top: 150px;
 }
 .container-data-header nav ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   list-style: none;
   list-style-type: none;
   padding: 0;
 }
 .container-data-header nav ul li {
-  margin: 20px;
-  background-color: #383127;
+  padding: 16px;
+}
+.container-data-header nav ul li .title {
+  display: flex;
+  justify-content: start;
+  text-align: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.container-data-header nav ul li .title svg {
+  width: 27px;
+  height: 45px;
+  fill: #23202e;
+}
+.container-data-header nav ul li .title h1 {
+  font-size: 24px;
+}
+.container-data-header nav ul li.vertical-dots {
+  display: flex;
+  flex-direction: column; /* Coloca los puntos de forma vertical */
+  align-items: center; /* Centra los puntos horizontalmente */
+  justify-content: center; /* Centra los puntos verticalmente */
+  height: 50px; /* Altura del contenedor */
+  width: 25px; /* Ancho del contenedor */
+}
+.container-data-header nav ul li .dot {
+  width: 5px; /* Ancho de cada punto */
+  height: 5px; /* Alto de cada punto (círculo) */
+  background-color: black; /* Color del punto */
+  border-radius: 50%; /* Hacer los puntos redondos */
+  margin: 5px 0; /* Espacio entre los puntos */
 }
 
 .container-data-body {
@@ -279,7 +319,7 @@ body {
   }
   .container-header .img {
     left: -24px;
-    height: 290px;
+    height: 270px;
   }
   .container-header .burger-menu {
     display: flex;
@@ -302,9 +342,36 @@ body {
   .container-aside {
     display: none;
   }
+  .container-data {
+    padding-top: 0px;
+  }
   .container-data-header {
-    width: 150px;
-    background: #2c2825;
+    top: auto;
+    bottom: auto;
+    left: 0;
+    height: auto;
+    width: 100%;
+  }
+  .container-data-header nav {
+    z-index: 1;
+    padding: 8px;
+  }
+  .container-data-header nav ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .container-data-header nav ul li {
+    flex-basis: 33%;
+    flex-grow: 1;
+    margin: 20px;
+  }
+  .container-data-header nav ul li.vertical-dots {
+    display: none;
+  }
+  .container-data-header nav ul li.dot {
+    display: none;
   }
 }
 

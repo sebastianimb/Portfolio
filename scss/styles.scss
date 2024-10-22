@@ -12,6 +12,7 @@ $text-color: #c4bba0;
 $text-title-color: rgba(226, 181, 123, 1);
 $text-title-color-active: rgb(233, 121, 255);
 $primary-color: #0b0b0ecc;
+$primary-color-solid: #0b0b0e;
 $active-color: rgba(27, 10, 33, 1);
 $gradient-background: linear-gradient(
   270deg,
@@ -31,6 +32,7 @@ $rhombus-gradient: linear-gradient(to left, #252530, #4d4b66, #9f9fcc);
   margin: 0;
   padding: 0;
   font-family: $fuente-personalizada;
+  font-size: 16px;
 }
 body {
   background: {
@@ -43,7 +45,7 @@ body {
 .burger-display {
   top: 0;
   left: 0;
-  background-color: $header-bg;
+  background-color: $main-bg;
   color: $text-color;
   position: fixed;
   z-index: 999;
@@ -74,6 +76,7 @@ body {
         transition: background-color 0.3s linear;
         .title {
           h1 {
+            font-size: 24px;
             color: $main-bg;
             margin-bottom: 4px;
           }
@@ -102,10 +105,10 @@ body {
     padding: 24px;
     align-items: center;
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
     h1 {
       font-size: 24px;
-      color: $text-color;
+      color: $primary-color;
     }
     .close-icon {
       font-weight: bold;
@@ -121,13 +124,13 @@ body {
   justify-content: space-between;
   background-color: $primary-color;
   height: 80px;
-  padding: 28px 0px 28px 0px;
+  padding: 24px 0px 24px 0px;
   .title {
-    padding: 0px 0px 0px 103px;
-    font-size: 24px;
+    padding: 0px 0px 0px 100px;
     text-align: center;
     color: $text-color;
     .text {
+      font-size: 36px;
       background: linear-gradient(
         351deg,
         rgba(69, 53, 39, 1) 0%,
@@ -150,7 +153,7 @@ body {
   .img-divider {
     position: absolute;
     left: 32px;
-    top: -135px;
+    top: -140px;
     width: 300px;
     height: 250px;
   }
@@ -159,7 +162,7 @@ body {
     display: flex;
     gap: 16px;
     a .icon {
-      background: rgba(7, 7, 10, 1);
+      background: $primary-color-solid;
       cursor: pointer;
       border: 1px solid $main-bg;
       display: flex;
@@ -167,9 +170,9 @@ body {
       text-align: center;
       align-items: center;
       .svg-icon {
-        width: 24px; /* Cambia el tamaño del SVG */
-        height: auto; /* Mantiene la relación de aspecto */
-        fill: $text-title-color; /* Cambia el color del SVG */
+        width: 24px;
+        height: auto;
+        fill: $text-title-color;
       }
       &:hover {
         background: rgba(45, 17, 55, 1);
@@ -188,6 +191,7 @@ body {
   justify-content: start;
 }
 .container-aside {
+  padding-top: 16px;
   width: 500px;
   color: white;
   display: flex;
@@ -219,14 +223,20 @@ body {
       z-index: 10;
       display: flex;
       flex-direction: column;
-      gap: 48px;
+      gap: 56px;
       li {
-        margin: 0px 48px;
+        align-items: center;
+        margin: 0px 24px;
         border-right: 1px solid #23202e;
         display: flex;
         justify-content: start;
         background: $gradient-background;
         transition: background-color 0.3s linear;
+        .title {
+          h1 {
+            font-size: 19px;
+          }
+        }
         &.active {
           border-right: 1px solid $text-title-color-active;
           background: $gradient-background-active;
@@ -248,6 +258,7 @@ body {
   }
 }
 .container-data {
+  padding-top: 16px;
   position: relative;
   width: 100%;
   display: flex;
@@ -294,12 +305,44 @@ body {
     padding: 8px;
     padding-top: 150px;
     ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       list-style: none;
       list-style-type: none;
       padding: 0;
       li {
-        margin: 20px;
-        background-color: #383127;
+        padding: 16px;
+        .title {
+          display: flex;
+          justify-content: start;
+          text-align: center;
+          flex-wrap: wrap;
+          gap: 16px;
+          svg {
+            width: 27px;
+            height: 45px;
+            fill: $header-bg;
+          }
+          h1 {
+            font-size: 24px;
+          }
+        }
+        &.vertical-dots {
+          display: flex;
+          flex-direction: column; /* Coloca los puntos de forma vertical */
+          align-items: center; /* Centra los puntos horizontalmente */
+          justify-content: center; /* Centra los puntos verticalmente */
+          height: 50px; /* Altura del contenedor */
+          width: 25px; /* Ancho del contenedor */
+        }
+        .dot {
+          width: 5px; /* Ancho de cada punto */
+          height: 5px; /* Alto de cada punto (círculo) */
+          background-color: black; /* Color del punto */
+          border-radius: 50%; /* Hacer los puntos redondos */
+          margin: 5px 0; /* Espacio entre los puntos */
+        }
       }
     }
   }
@@ -321,7 +364,7 @@ body {
     }
     .img {
       left: -24px;
-      height: 290px;
+      height: 270px;
     }
     .burger-menu {
       display: flex;
@@ -345,8 +388,36 @@ body {
   .container-aside {
     display: none;
   }
+  .container-data {
+    padding-top: 0px;
+  }
   .container-data-header {
-    width: 150px;
-    background: $header-main;
+    top: auto;
+    bottom: auto;
+    left: 0;
+    height: auto;
+    width: 100%;
+
+    nav {
+      z-index: 1;
+      padding: 8px;
+      ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        li {
+          flex-basis: 33%;
+          flex-grow: 1;
+          margin: 20px;
+          &.vertical-dots {
+            display: none;
+          }
+          &.dot {
+            display: none;
+          }
+        }
+      }
+    }
   }
 }
