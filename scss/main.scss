@@ -1,0 +1,25 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('../dist/fonts/Roboto/Roboto-Medium.ttf') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+$fuente-personalizada: 'Roboto', sans-serif;
+$header-bg: #23202e;
+$main-bg: #756960;
+$header-main: #2c2825;
+$text-color: #c4bba0;
+$text-title-color:rgba(226,181,123,1);
+$text-title-color-active:rgb(233, 121, 255);
+$primary-color: #0b0b0e;
+$active-color: rgba(27,10,33,1);
+$gradient-background:linear-gradient(270deg, rgba(7,7,10,1) 0%, rgba(7,7,10,1) 85%, rgba(64,57,96,0) 93%);
+$gradient-background-active: linear-gradient(270deg, rgba(27,10,33,1) 0%, rgba(45,17,55,1) 80%, rgba(64,57,96,0) 93%);
+$rhombus-gradient-active: linear-gradient(to left, #161216, #5d2e72, #e8acff);
+$rhombus-gradient: linear-gradient(to left, #252530, #4d4b66, #9f9fcc);
+*{
+    margin:0;
+    padding: 0;
+    font-family:$fuente-personalizada;
+}
