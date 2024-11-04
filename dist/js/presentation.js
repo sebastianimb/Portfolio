@@ -1,15 +1,35 @@
-const lidata = document.querySelectorAll('#aside-data li');
-lidata.forEach((item, index) => {
-    item.addEventListener('click', function() {
-        lidata.forEach(i => {
-            i.classList.remove('active');
-            if (i.id === 'firts-dot' && this.id === 'resumen') {
-                i.classList.add('active');
-            }
-            if (i.id === 'second-dot' && this.id === 'estudios') {
-                i.classList.add('active');
-            }
-        })
-        this.classList.add('active');
+const liData = document.querySelectorAll("#aside-data li");
+const titleBody = document.querySelector(".container-data-body .title h1");
+const resumeBody = document.querySelector(".container-data-body .body-resume");
+const studyBody = document.querySelector(".container-data-body .body-study");
+const HobbyBody = document.querySelector(".container-data-body .body-hobby");
+console.log(HobbyBody);
+liData.forEach((item, index) => {
+  item.addEventListener("click", function () {
+    liData.forEach((i) => {
+      i.classList.remove("active");
+      console.log(i.id);
+      if (i.id === "firts-dot" && this.id === "resumen") {
+        i.classList.add("active");
+        titleBody.textContent = "Resumen";
+        resumeBody.style.display = "flex";
+        studyBody.style.display = "none";
+        HobbyBody.style.display = "none";
+      }
+      if (i.id === "second-dot" && this.id === "estudios") {
+        titleBody.textContent = "Estudios";
+        i.classList.add("active");
+        resumeBody.style.display = "none";
+        studyBody.style.display = "flex";
+        HobbyBody.style.display = "none";
+      }
+      if (this.id === "pasatiempos") {
+        titleBody.textContent = "Pasatiempos";
+        resumeBody.style.display = "none";
+        studyBody.style.display = "none";
+        HobbyBody.style.display = "flex";
+      }
     });
+    this.classList.add("active");
+  });
 });
