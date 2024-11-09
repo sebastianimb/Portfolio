@@ -9,21 +9,21 @@ liData.forEach((item, index) => {
     liData.forEach((i) => {
       i.classList.remove("active");
       console.log(i.id);
-      if (i.id === "firts-dot" && this.id === "resumen") {
-        i.classList.add("active");
+      if (this.id === "resumen") {
         titleBody.textContent = "Resumen";
         resumeBody.style.display = "flex";
         studyBody.style.display = "none";
         HobbyBody.style.display = "none";
       }
-      if (i.id === "second-dot" && this.id === "estudios") {
+      if (i.id === "firts-dot" && this.id === "estudios") {
         titleBody.textContent = "Estudios";
         i.classList.add("active");
         resumeBody.style.display = "none";
         studyBody.style.display = "flex";
         HobbyBody.style.display = "none";
       }
-      if (this.id === "pasatiempos") {
+      if (i.id === "second-dot" && this.id === "pasatiempos") {
+        i.classList.add("active");
         titleBody.textContent = "Pasatiempos";
         resumeBody.style.display = "none";
         studyBody.style.display = "none";
