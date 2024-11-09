@@ -510,7 +510,10 @@ body {
 .container-main .container-data .container-data-body .body-experience ol li a .date {
   grid-column: span 1;
   margin-top: 8px;
-  text-align: center;
+  text-align: start;
+}
+.container-main .container-data .container-data-body .body-experience ol li a .date h1 {
+  color: #c4bba0;
 }
 .container-main .container-data .container-data-body .body-experience ol li a .info {
   grid-column: 2/9;

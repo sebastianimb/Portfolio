@@ -567,7 +567,10 @@ body {
               .date {
                 grid-column: span 1;
                 margin-top: 8px;
-                text-align: center;
+                text-align: start;
+                h1 {
+                  color: $text-color;
+                }
               }
               .info {
                 grid-column: 2 / 9;
