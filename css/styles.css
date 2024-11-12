@@ -859,7 +859,7 @@ body {
     flex-basis: auto;
   }
   .container-main .container-data .container-data-body .title {
-    margin-top: 140px;
+    margin-top: 120px;
   }
 }
 @media (max-width: 1340px) {
