@@ -19,6 +19,7 @@ body {
 }
 
 .burger-display {
+  position: relative;
   top: 0;
   left: 0;
   background-color: rgb(83, 80, 78);
@@ -92,6 +93,29 @@ body {
   font-weight: bold;
   font-size: 24px;
   cursor: pointer;
+}
+.burger-display .burger-rss {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  bottom: 24px;
+  gap: 24px;
+}
+.burger-display .burger-rss a .icon {
+  border-radius: 4px;
+  background: rgba(11, 11, 14, 0.8);
+  cursor: pointer;
+  border: 1px solid rgb(83, 80, 78);
+  display: flex;
+  padding: 8px;
+  text-align: center;
+  align-items: center;
+}
+.burger-display .burger-rss a .icon .svg-icon {
+  width: 48px;
+  height: auto;
+  fill: rgb(226, 181, 123);
 }
 
 .container-header {

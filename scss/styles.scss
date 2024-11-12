@@ -50,6 +50,7 @@ body {
   }
 }
 .burger-display {
+  position: relative;
   top: 0;
   left: 0;
   background-color: $main-bg;
@@ -125,6 +126,29 @@ body {
       font-weight: bold;
       font-size: 24px;
       cursor: pointer;
+    }
+  }
+  .burger-rss {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    bottom: 24px;
+    gap: 24px;
+    a .icon {
+      border-radius: 4px;
+      background: $primary-color;
+      cursor: pointer;
+      border: 1px solid $main-bg;
+      display: flex;
+      padding: 8px;
+      text-align: center;
+      align-items: center;
+      .svg-icon {
+        width: 48px;
+        height: auto;
+        fill: $text-title-color;
+      }
     }
   }
 }
