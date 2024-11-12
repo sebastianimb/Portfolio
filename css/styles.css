@@ -150,6 +150,7 @@ body {
   fill: rgb(226, 181, 123);
 }
 .container-header .rss a .icon:hover {
+  transition: background-color 0.5s ease;
   background: rgb(45, 17, 55);
 }
 .container-header .burger-menu {
@@ -325,6 +326,9 @@ body {
   width: 100%;
   background-color: rgb(83, 80, 78);
 }
+.container-main .container-data .container-data-body#container-presentation {
+  padding: 24px 40px;
+}
 .container-main .container-data .container-data-body .title {
   margin-top: 8px;
   padding: 24px 0px;
@@ -382,7 +386,7 @@ body {
   margin-top: 12px;
   padding: 24px;
   background-color: color-mix(in srgb, #2c2825 90%, transparent);
-  line-height: 1.8;
+  line-height: 2;
   color: #c4bba0;
   font-size: 16px;
 }
@@ -408,30 +412,41 @@ body {
   margin-top: 36px;
   margin-left: 232px;
 }
-.container-main .container-data .container-data-body .body-study p {
+.container-main .container-data .container-data-body .body-study .row {
   flex-grow: 1;
   border-radius: 8px;
+  border: solid 1px #c4bba0;
   margin-top: 12px;
   padding: 24px;
   background-color: color-mix(in srgb, #2c2825 90%, transparent);
-  line-height: 1.8;
+}
+.container-main .container-data .container-data-body .body-study .row:nth-of-type(1) {
+  flex-basis: 100%;
+  width: 100%;
+}
+.container-main .container-data .container-data-body .body-study .row:nth-of-type(4) {
+  flex-basis: 100%;
+  width: 100%;
+}
+.container-main .container-data .container-data-body .body-study .row:nth-of-type(6) {
+  flex-basis: 100%;
+  width: 100%;
+}
+.container-main .container-data .container-data-body .body-study .row:hover {
+  transition: background-color 0.5s ease;
+  border: solid 1px white;
+  background-color: color-mix(in srgb, #1b0a21 90%, transparent);
+}
+.container-main .container-data .container-data-body .body-study .row:hover p {
+  color: #c4a0b5;
+}
+.container-main .container-data .container-data-body .body-study .row p {
+  line-height: 1.9;
   color: #c4bba0;
   font-size: 16px;
 }
-.container-main .container-data .container-data-body .body-study p b {
+.container-main .container-data .container-data-body .body-study .row p b {
   color: white;
-}
-.container-main .container-data .container-data-body .body-study p:nth-of-type(1) {
-  flex-basis: 100%;
-  width: 100%;
-}
-.container-main .container-data .container-data-body .body-study p:nth-of-type(4) {
-  flex-basis: 100%;
-  width: 100%;
-}
-.container-main .container-data .container-data-body .body-study p:nth-of-type(6) {
-  flex-basis: 100%;
-  width: 100%;
 }
 .container-main .container-data .container-data-body .body-hobby {
   display: none;
@@ -450,6 +465,7 @@ body {
   flex-direction: column;
   align-items: center;
   border-radius: 8px;
+  border: 1px solid #c4bba0;
   background-color: color-mix(in srgb, #2c2825 90%, transparent);
 }
 .container-main .container-data .container-data-body .body-hobby .card:nth-of-type(4) {
@@ -490,7 +506,7 @@ body {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  margin-top: 72px;
+  margin: 72px 48px;
 }
 .container-main .container-data .container-data-body .body-experience ol {
   list-style: none;
@@ -498,11 +514,17 @@ body {
 .container-main .container-data .container-data-body .body-experience ol li {
   margin-bottom: 48px;
 }
+.container-main .container-data .container-data-body .body-experience ol li:hover a {
+  transition: border-color 0.4s ease;
+  border: 1px solid color-mix(in srgb, #c4bba0 90%, transparent);
+  background-color: color-mix(in srgb, #2c2825 90%, transparent);
+}
 .container-main .container-data .container-data-body .body-experience ol li a {
   display: grid;
   grid-template-columns: repeat(8, minmax(0, 1fr));
   border-radius: 8px;
   background-color: #2c2825;
+  border: 1px solid #c4bba0;
   color: #c4bba0;
   padding: 24px;
   text-decoration: none;
@@ -526,7 +548,7 @@ body {
   margin: 8px 0px 16px 0px;
 }
 .container-main .container-data .container-data-body .body-experience ol li a .info p {
-  line-height: 1.8;
+  line-height: 2;
 }
 .container-main .container-data .container-data-body .body-experience ol li a .tools {
   margin-top: 16px;
@@ -547,18 +569,15 @@ body {
 }
 .container-main .container-data .container-data-body .body-contact {
   display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  margin-top: 72px;
-  gap: 24px;
+  justify-content: center;
+  margin: 72px 48px;
 }
 .container-main .container-data .container-data-body .body-contact .contact-left {
+  flex: 1 1 auto;
   color: #c4bba0;
-  border-radius: 8px;
+  border-radius: 8px 0px 0px 8px;
   padding: 24px;
-  width: 40%;
-  background-color: color-mix(in srgb, #2c2825 90%, transparent);
+  background-color: #2c2825;
   display: flex;
   align-items: start;
   flex-direction: column;
@@ -607,23 +626,41 @@ body {
   border: 1px solid #c4bba0;
   outline: none;
 }
-.container-main .container-data .container-data-body .body-contact .contact-left button {
+.container-main .container-data .container-data-body .body-contact .contact-left .contact-submit {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 100%;
+}
+.container-main .container-data .container-data-body .body-contact .contact-left .contact-submit button {
+  width: 100%;
   cursor: pointer;
   background-color: #c4bba0;
   color: #0b0b0e;
-  width: 200px;
   height: 48px;
   border-radius: 8px;
   outline: none;
   border: 1px solid #c4bba0;
-  color: #0b0b0e;
   padding: 24px;
   align-items: center;
   display: flex;
   justify-content: center;
 }
-.container-main .container-data .container-data-body .body-contact .contact-left button p {
+.container-main .container-data .container-data-body .body-contact .contact-left .contact-submit button p {
+  color: #0b0b0e;
   font-weight: bold;
+}
+.container-main .container-data .container-data-body .body-contact .contact-left .contact-submit button:hover {
+  border: 1px solid #c4a0b5;
+  background-color: #1b0a21;
+}
+.container-main .container-data .container-data-body .body-contact .contact-left .contact-submit button:hover p {
+  color: #c4a0b5;
+}
+.container-main .container-data .container-data-body .body-contact .contact-right {
+  padding: 24px;
+  background-color: color-mix(in srgb, #2c2825 90%, transparent);
+  border-radius: 0px 8px 8px 0px;
 }
 .container-main .container-data .container-data-body .body-contact .contact-right img {
   overflow: hidden;
@@ -710,6 +747,9 @@ body {
   .container-main .container-data .container-data-header nav ul li.vertical-dots {
     display: none;
   }
+  .container-main .container-data .container-data-body#container-presentation {
+    padding: 24px;
+  }
   .container-main .container-data .container-data-body .title {
     margin-left: 0px;
     margin-top: 220px;
@@ -749,7 +789,12 @@ body {
   .container-main .container-data .container-data-body .body-hobby .card {
     flex: 1 1 auto;
   }
+  .container-main .container-data .container-data-body .body-contact {
+    margin: 0;
+    margin-top: 72px;
+  }
   .container-main .container-data .container-data-body .body-contact .contact-left {
+    border-radius: 8px;
     width: 100%;
   }
   .container-main .container-data .container-data-body .body-contact .contact-right {
@@ -757,6 +802,9 @@ body {
   }
   .container-main .container-data .container-data-body .body-contact .contact-right img {
     display: none;
+  }
+  .container-main .container-data .container-data-body .body-experience {
+    margin: 72px 0px;
   }
   .container-main .container-data .container-data-body .body-experience ol li a .date {
     grid-column: 1/9;
@@ -790,10 +838,12 @@ body {
     margin-top: 140px;
   }
 }
-@media (max-width: 1051px) {
-  .container-main .container-data .container-data-body .body-contact .contact-right img {
-    width: 350px;
-    height: 350px;
+@media (max-width: 1340px) {
+  .container-main .container-data .container-data-body .body-contact .contact-left {
+    width: 100%;
+  }
+  .container-main .container-data .container-data-body .body-contact .contact-right {
+    display: none;
   }
 }
 

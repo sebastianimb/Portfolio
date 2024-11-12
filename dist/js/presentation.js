@@ -3,12 +3,10 @@ const titleBody = document.querySelector(".container-data-body .title h1");
 const resumeBody = document.querySelector(".container-data-body .body-resume");
 const studyBody = document.querySelector(".container-data-body .body-study");
 const HobbyBody = document.querySelector(".container-data-body .body-hobby");
-console.log(HobbyBody);
 liData.forEach((item, index) => {
   item.addEventListener("click", function () {
     liData.forEach((i) => {
       i.classList.remove("active");
-      console.log(i.id);
       if (this.id === "resumen") {
         titleBody.textContent = "Resumen";
         resumeBody.style.display = "flex";

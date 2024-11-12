@@ -186,6 +186,7 @@ body {
         fill: $text-title-color;
       }
       &:hover {
+        transition: background-color 0.5s ease;
         background: rgba(45, 17, 55, 1);
       }
     }
@@ -376,6 +377,9 @@ body {
       border: 8px ridge #6a615a;
       width: 100%;
       background-color: $main-bg;
+      &#container-presentation {
+        padding: 24px 40px;
+      }
       .title {
         margin-top: 8px;
         padding: 24px 0px;
@@ -441,7 +445,7 @@ body {
           margin-top: 12px;
           padding: 24px;
           background-color: color-mix(in srgb, $header-main 90%, transparent);
-          line-height: 1.8;
+          line-height: 2;
           color: $text-color;
           font-size: 16px;
           b {
@@ -468,18 +472,13 @@ body {
         gap: 24px;
         margin-top: 36px;
         margin-left: calc(200px + 32px);
-        p {
+        .row {
           flex-grow: 1;
           border-radius: 8px;
+          border: solid 1px $text-color;
           margin-top: 12px;
           padding: 24px;
           background-color: color-mix(in srgb, $header-main 90%, transparent);
-          line-height: 1.8;
-          color: $text-color;
-          font-size: 16px;
-          b {
-            color: white;
-          }
           &:nth-of-type(1) {
             flex-basis: 100%;
             width: 100%;
@@ -491,6 +490,26 @@ body {
           &:nth-of-type(6) {
             flex-basis: 100%;
             width: 100%;
+          }
+          &:hover {
+            transition: background-color 0.5s ease;
+            border: solid 1px white;
+            background-color: color-mix(
+              in srgb,
+              $active-color 90%,
+              transparent
+            );
+            p {
+              color: #c4a0b5;
+            }
+          }
+          p {
+            line-height: 1.9;
+            color: $text-color;
+            font-size: 16px;
+            b {
+              color: white;
+            }
           }
         }
       }
@@ -510,6 +529,7 @@ body {
           flex-direction: column;
           align-items: center;
           border-radius: 8px;
+          border: 1px solid $text-color;
           background-color: color-mix(in srgb, $header-main 90%, transparent);
           &:nth-of-type(4) {
             flex-basis: 100%;
@@ -551,16 +571,29 @@ body {
         justify-content: center;
         flex-direction: column;
         align-items: center;
-        margin-top: 72px;
+        margin: 72px 48px;
         ol {
           list-style: none;
           li {
+            &:hover {
+              a {
+                transition: border-color 0.4s ease;
+                border: 1px solid
+                  color-mix(in srgb, $text-color 90%, transparent);
+                background-color: color-mix(
+                  in srgb,
+                  $header-main 90%,
+                  transparent
+                );
+              }
+            }
             margin-bottom: 48px;
             a {
               display: grid;
               grid-template-columns: repeat(8, minmax(0, 1fr));
               border-radius: 8px;
               background-color: $header-main;
+              border: 1px solid $text-color;
               color: $text-color;
               padding: 24px;
               text-decoration: none;
@@ -582,7 +615,7 @@ body {
                   margin: 8px 0px 16px 0px;
                 }
                 p {
-                  line-height: 1.8;
+                  line-height: 2;
                 }
               }
               .tools {
@@ -608,17 +641,14 @@ body {
       }
       .body-contact {
         display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
-        margin-top: 72px;
-        gap: 24px;
+        justify-content: center;
+        margin: 72px calc(72px - 24px);
         .contact-left {
+          flex: 1 1 auto;
           color: $text-color;
-          border-radius: 8px;
+          border-radius: 8px 0px 0px 8px;
           padding: 24px;
-          width: 40%;
-          background-color: color-mix(in srgb, $header-main 90%, transparent);
+          background-color: $header-main;
           display: flex;
           align-items: start;
           flex-direction: column;
@@ -668,26 +698,42 @@ body {
               outline: none;
             }
           }
-          button {
-            cursor: pointer;
-            background-color: $text-color;
-            color: $primary-color-solid;
-            width: 200px;
-            height: 48px;
-            border-radius: 8px;
-            outline: none;
-            border: 1px solid $text-color;
-            color: $primary-color-solid;
-            padding: 24px;
-            align-items: center;
+          .contact-submit {
             display: flex;
-            justify-content: center;
-            p {
-              font-weight: bold;
+            justify-content: end;
+            align-items: center;
+            width: 100%;
+            button {
+              width: 100%;
+              cursor: pointer;
+              background-color: $text-color;
+              color: $primary-color-solid;
+              height: 48px;
+              border-radius: 8px;
+              outline: none;
+              border: 1px solid $text-color;
+              padding: 24px;
+              align-items: center;
+              display: flex;
+              justify-content: center;
+              p {
+                color: $primary-color-solid;
+                font-weight: bold;
+              }
+              &:hover {
+                border: 1px solid #c4a0b5;
+                background-color: $active-color;
+                p {
+                  color: #c4a0b5;
+                }
+              }
             }
           }
         }
         .contact-right {
+          padding: 24px;
+          background-color: color-mix(in srgb, $header-main 90%, transparent);
+          border-radius: 0px 8px 8px 0px;
           img {
             overflow: hidden;
             object-fit: cover;
@@ -795,6 +841,9 @@ body {
         }
       }
       .container-data-body {
+        &#container-presentation {
+          padding: 24px;
+        }
         .title {
           margin-left: 0px;
           margin-top: 220px;
@@ -836,7 +885,10 @@ body {
           }
         }
         .body-contact {
+          margin: 0;
+          margin-top: 72px;
           .contact-left {
+            border-radius: 8px;
             width: 100%;
           }
           .contact-right {
@@ -847,6 +899,7 @@ body {
           }
         }
         .body-experience {
+          margin: 72px 0px;
           ol {
             li {
               a {
@@ -904,16 +957,16 @@ body {
 }
 
 // Particular Case Media Query
-@media (max-width: 1051px) {
+@media (max-width: 1340px) {
   .container-main {
     .container-data {
       .container-data-body {
         .body-contact {
+          .contact-left {
+            width: 100%;
+          }
           .contact-right {
-            img {
-              width: 350px;
-              height: 350px;
-            }
+            display: none;
           }
         }
       }
