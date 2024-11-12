@@ -442,7 +442,7 @@ body {
         }
       }
       #title-banner {
-        margin: 4px 0px;
+        margin: 4px 48px;
       }
       .body-resume {
         background: {
@@ -871,6 +871,9 @@ body {
         .title {
           margin-left: 0px;
           margin-top: 220px;
+          &#title-banner {
+            margin: 4px 0px;
+          }
         }
         .body-resume {
           padding: 0;
@@ -971,7 +974,6 @@ body {
         }
       }
       .container-data-body {
-        padding: 4px;
         .title {
           margin-top: 140px;
         }

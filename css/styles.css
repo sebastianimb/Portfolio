@@ -384,7 +384,7 @@ body {
   z-index: 2;
 }
 .container-main .container-data .container-data-body #title-banner {
-  margin: 4px 0px;
+  margin: 4px 48px;
 }
 .container-main .container-data .container-data-body .body-resume {
   background-image: url(../dist/img/valdivia.jpg);
@@ -778,6 +778,9 @@ body {
     margin-left: 0px;
     margin-top: 220px;
   }
+  .container-main .container-data .container-data-body .title#title-banner {
+    margin: 4px 0px;
+  }
   .container-main .container-data .container-data-body .body-resume {
     padding: 0;
     justify-content: center;
@@ -854,9 +857,6 @@ body {
   }
   .container-main .container-data .container-data-header nav ul li {
     flex-basis: auto;
-  }
-  .container-main .container-data .container-data-body {
-    padding: 4px;
   }
   .container-main .container-data .container-data-body .title {
     margin-top: 140px;
