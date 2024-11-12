@@ -38,3 +38,18 @@ document.getElementById("cv-download").addEventListener("click", function () {
     })
     .catch((error) => alert("Error: " + error.message));
 });
+
+document
+  .getElementById("cv-burger-download")
+  .addEventListener("click", function () {
+    const link = document.createElement("a");
+    link.type = "application/pdf";
+    link.href = "../dist/doc/CV-MolinaSebastian.pdf";
+    link.download = "CV-Sebastian-Molina.pdf";
+    fetch(link.href)
+      .then((response) => {
+        if (!response.ok) throw new Error("Archivo no encontrado");
+        link.click();
+      })
+      .catch((error) => alert("Error: " + error.message));
+  });
