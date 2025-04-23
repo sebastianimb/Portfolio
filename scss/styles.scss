@@ -6,35 +6,36 @@
 }
 $fuente-personalizada: "Roboto", sans-serif;
 $header-bg: #23202e;
+$title_color: #afafaf;
 $main-bg: rgb(83, 80, 78);
 $header-main: #2c2825;
-$text-color: #c4bba0;
+$text-color: #d3d3d3;
 $text-title-color: rgba(226, 181, 123, 1);
 $text-title-color-active: rgb(233, 121, 255);
 $pink-background: #2d1137;
 $primary-color: #0b0b0ecc;
-$primary-color-solid: #0b0b0e;
+$primary-color-solid: #0a0a0c;
 $active-color: #1b0a21;
 $gradient-background: linear-gradient(
   270deg,
-  rgba(7, 7, 10, 1) 0%,
-  rgba(7, 7, 10, 1) 85%,
-  rgba(64, 57, 96, 0) 93%
+  #19191f 0%,
+  #101014 85%,
+  #40396000 100%
 );
 $gradient-background-active: linear-gradient(
   270deg,
-  rgba(27, 10, 33, 1) 0%,
-  rgba(45, 17, 55, 1) 80%,
-  rgba(64, 57, 96, 0) 93%
+  #1b0a21 0%,
+  #2d1137 80%,
+  #40396000 100%
 );
 $gradient-background-active-solid: linear-gradient(
   270deg,
-  rgba(27, 10, 33, 1) 100%,
-  rgba(45, 17, 55, 1) 100%,
-  rgba(64, 57, 96, 0) 93%
+  #1b0a21 100%,
+  #2d1137 100%,
+  #40396000 100%
 );
-$rhombus-gradient-active: linear-gradient(to left, #161216, #5d2e72, #e8acff);
-$rhombus-gradient: linear-gradient(to left, #252530, #4d4b66, #9f9fcc);
+$rhombus-gradient-active: linear-gradient(to left, #1a1a1a, #5d2e72, #e8acff);
+$rhombus-gradient: linear-gradient(to left, #252530, #6b6b6b4f, #cccccc56);
 * {
   margin: 0;
   padding: 0;
@@ -53,7 +54,7 @@ body {
   position: relative;
   top: 0;
   left: 0;
-  background-color: $main-bg;
+  background-color: #19191f;
   color: $text-color;
   position: fixed;
   z-index: 999;
@@ -78,8 +79,8 @@ body {
         color: inherit;
       }
       li {
-        border-top: 1px solid $main-bg;
-        border-bottom: 1px solid $main-bg;
+        border-top: 1px solid #5e5e5e;
+        border-bottom: 1px solid #5e5e5e;
         width: 100%;
         display: flex;
         justify-content: start;
@@ -89,7 +90,7 @@ body {
         .title {
           h1 {
             font-size: 24px;
-            color: $main-bg;
+            color: $title_color;
             margin-bottom: 4px;
           }
           p {
@@ -136,10 +137,10 @@ body {
     bottom: 24px;
     gap: 24px;
     a .icon {
-      border-radius: 4px;
+      border-radius: 8px;
       background: $primary-color;
       cursor: pointer;
-      border: 1px solid $main-bg;
+      border: 1px solid #5e5e5e;
       display: flex;
       padding: 8px;
       text-align: center;
@@ -147,7 +148,7 @@ body {
       .svg-icon {
         width: 40px;
         height: auto;
-        fill: $text-title-color;
+        fill: $title_color;
       }
     }
   }
@@ -161,20 +162,11 @@ body {
   height: 80px;
   padding: 24px 0px 24px 0px;
   .title {
-    padding: 0px 0px 0px 100px;
+    padding: 0px 0px 0px 60px;
     text-align: center;
-    color: $text-color;
+    color: $title_color;
     .text {
-      font-size: 36px;
-      background: linear-gradient(
-        351deg,
-        rgba(69, 53, 39, 1) 0%,
-        rgba(191, 146, 106, 1) 52%,
-        rgba(226, 181, 123, 1) 80%
-      );
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+      font-size: 32px;
     }
   }
   .img {
@@ -200,6 +192,7 @@ body {
       background: $primary-color-solid;
       cursor: pointer;
       border: 1px solid $main-bg;
+      border-radius: 8px;
       display: flex;
       padding: 8px;
       text-align: center;
@@ -207,10 +200,11 @@ body {
       .svg-icon {
         width: 24px;
         height: auto;
-        fill: $text-title-color;
+        fill: $title_color;
       }
       &:hover {
-        transition: background-color 0.5s ease;
+        border: 1px solid rgba(45, 17, 55, 1);
+        transition: background-color 0.4s ease, border-color 0.4s ease;
         background: rgba(45, 17, 55, 1);
       }
     }
@@ -234,19 +228,12 @@ body {
     .title {
       margin-left: 24px;
       h1 {
-        color: $main-bg;
+        color: $title_color;
         margin-bottom: 4px;
       }
       p {
         color: $text-color;
       }
-    }
-    .icon {
-      width: 50px;
-      height: 50px;
-      background: $rhombus-gradient;
-      border: 1px solid #78769e;
-      transform: rotate(225deg);
     }
     nav {
       ul {
@@ -263,10 +250,6 @@ body {
           &.active a {
             border-right: 1px solid $text-title-color-active;
             background: $gradient-background-active;
-            .icon {
-              border: 1px solid #542e66;
-              background: $rhombus-gradient-active;
-            }
             .title {
               h1 {
                 color: $text-title-color-active;
@@ -276,17 +259,28 @@ body {
               }
             }
           }
+          &:hover {
+            .icon {
+              background: $rhombus-gradient;
+              border: 1px solid #3b3b3b;
+              transform: rotate(225deg);
+            }
+            a {
+              opacity: 1;
+            }
+          }
           a {
+            padding: 12px 0px;
             text-decoration: none;
             color: inherit;
             align-items: center;
-            margin: 0px 24px;
-            border-right: 1px solid #23202e;
+            margin: 0px 24px 0px 0px;
             display: flex;
             justify-content: start;
             background: $gradient-background;
-            transition: background-color 0.3s linear;
+            opacity: 0.8;
             .title {
+              padding-left: 24px;
               h1 {
                 font-size: 19px;
               }
@@ -307,15 +301,14 @@ body {
       flex-direction: column;
       flex-wrap: wrap;
       width: auto;
+      border-radius: 8px 8px 0px 0px;
       padding: 0px 24px;
       left: 32px;
       top: 0;
       bottom: 0;
       box-shadow: 2px 3px 20px black, 0 0 125px #111110 inset;
       z-index: 10;
-      background: #fffef0;
-      filter: url(#wavy2);
-      background-image: url(data:image/png;base64,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);
+      background: #ffffff;
       nav {
         position: relative;
         display: flex;
@@ -398,11 +391,13 @@ body {
       }
     }
     .container-data-body {
+      margin: 0px 24px 24px 0px;
       overflow-y: auto;
       padding: 24px;
-      border: 8px ridge #6a615a;
+      border-radius: 8px;
       width: 100%;
-      background-color: $main-bg;
+      background-color: #19191f;
+      border: 1px solid #5e5e5e;
       &#container-presentation {
         padding: 24px 40px;
       }
@@ -422,18 +417,7 @@ body {
           height: 48px;
           padding: 4px;
           z-index: 1;
-          border: 8px ridge $text-color;
-          border-left: 0;
-          border-right: 0;
-          background: $gradient-background-active-solid;
-          clip-path: polygon(
-            5% 0%,
-            95% 0%,
-            100% 50%,
-            95% 100%,
-            5% 100%,
-            0% 50%
-          );
+          background: $gradient-background;
         }
         h1 {
           font-size: 36px;
@@ -448,7 +432,7 @@ body {
       }
       .body-resume {
         background: {
-          image: url(../dist/img/valdivia.jpg);
+          image: url(../dist/img/valdivia.png);
           size: cover;
           position: center;
           repeat: no-repeat;
@@ -465,17 +449,27 @@ body {
           height: 200px;
           clip-path: circle(50%);
         }
+        label {
+          cursor: pointer;
+          margin-top: 24px;
+          padding: 8px;
+          color: #ae57ff;
+        }
         p {
           flex-grow: 1;
           border-radius: 8px;
           margin-top: 12px;
           padding: 24px;
-          background-color: color-mix(in srgb, $header-main 90%, transparent);
-          line-height: 2;
+          background-color: color-mix(
+            in srgb,
+            $primary-color-solid 90%,
+            transparent
+          );
+          line-height: 2.5;
           color: $text-color;
           font-size: 16px;
           b {
-            color: white;
+            color: #ae57ff;
           }
         }
         .punta {
@@ -487,7 +481,7 @@ body {
           border-left: 10px solid transparent;
           border-right: 10px solid transparent;
           border-bottom: 10px solid
-            color-mix(in srgb, $header-main 90%, transparent);
+            color-mix(in srgb, $primary-color-solid 90%, transparent);
         }
       }
       .body-study {
@@ -499,44 +493,38 @@ body {
         margin-top: 36px;
         margin-left: calc(200px + 32px);
         .row {
+          background-color: color-mix(
+            in srgb,
+            $primary-color-solid 90%,
+            transparent
+          );
+          color: #d3d3d3;
+          font-size: 16px;
           flex-grow: 1;
           border-radius: 8px;
-          border: solid 1px $text-color;
+          border: solid 1px #5e5e5e;
           margin-top: 12px;
           padding: 24px;
-          background-color: color-mix(in srgb, $header-main 90%, transparent);
-          &:nth-of-type(1) {
-            flex-basis: 100%;
-            width: 100%;
-          }
-          &:nth-of-type(4) {
-            flex-basis: 100%;
-            width: 100%;
-          }
-          &:nth-of-type(6) {
-            flex-basis: 100%;
-            width: 100%;
-          }
+          flex-basis: 100%;
+          width: 100%;
+          opacity: 0.8;
           &:hover {
-            transition: background-color 0.5s ease;
-            border: solid 1px white;
-            background-color: color-mix(
-              in srgb,
-              $active-color 90%,
-              transparent
-            );
-            p {
-              color: #c4a0b5;
-            }
+            opacity: 1;
           }
           p {
-            line-height: 1.9;
+            line-height: 3;
             color: $text-color;
             font-size: 16px;
             b {
-              color: white;
+              color: #ae57ff;
             }
           }
+        }
+        label {
+          cursor: pointer;
+          margin-top: 24px;
+          padding: 8px;
+          color: #ae57ff;
         }
       }
       .body-hobby {
@@ -548,6 +536,11 @@ body {
         margin-top: 48px;
         margin-left: calc(200px + 32px);
         .card {
+          &:hover {
+            opacity: 1;
+          }
+          opacity: 0.8;
+          min-height: 500px;
           flex: 1 1 calc((100% / 3) - 24px);
           text-align: justify;
           display: flex;
@@ -555,8 +548,13 @@ body {
           flex-direction: column;
           align-items: center;
           border-radius: 8px;
-          border: 1px solid $text-color;
-          background-color: color-mix(in srgb, $header-main 90%, transparent);
+          border: 1px solid #5e5e5e;
+          background-color: color-mix(
+            in srgb,
+            $primary-color-solid 90%,
+            transparent
+          );
+          color: #d3d3d3;
           &:nth-of-type(4) {
             flex-basis: 100%;
             width: 100%;
@@ -572,6 +570,7 @@ body {
             background-color: $primary-color-solid;
             border-radius: 8px 8px 0 0;
             width: 100%;
+            height: 200px;
             svg {
               padding: 24px;
               fill: white;
@@ -591,6 +590,15 @@ body {
             }
           }
         }
+        a {
+          width: 100%;
+          text-align: center;
+          text-decoration: none;
+          cursor: pointer;
+          margin-top: 24px;
+          padding: 8px;
+          color: #ae57ff;
+        }
       }
       .body-experience {
         display: flex;
@@ -603,27 +611,29 @@ body {
           li {
             &:hover {
               a {
-                transition: border-color 0.4s ease;
-                border: 1px solid
-                  color-mix(in srgb, $text-color 90%, transparent);
-                background-color: color-mix(
-                  in srgb,
-                  $header-main 90%,
-                  transparent
-                );
+                opacity: 1;
               }
             }
             margin-bottom: 48px;
             a {
+              opacity: 0.8;
               display: grid;
               grid-template-columns: repeat(8, minmax(0, 1fr));
               border-radius: 8px;
-              background-color: $header-main;
-              border: 1px solid $text-color;
+              background-color: color-mix(
+                in srgb,
+                $primary-color-solid 90%,
+                transparent
+              );
+              color: #d3d3d3;
+              border: 1px solid #5e5e5e;
               color: $text-color;
               padding: 24px;
               text-decoration: none;
               .date {
+                p {
+                  font-size: 14px;
+                }
                 grid-column: span 1;
                 margin-top: 8px;
                 text-align: start;
@@ -654,7 +664,7 @@ body {
                 .tool {
                   padding: 12px;
                   border-radius: 8px;
-                  background-color: $active-color;
+                  background-color: $pink-background;
                   h1 {
                     font-size: 12px;
                     color: white;
@@ -663,6 +673,14 @@ body {
               }
             }
           }
+        }
+        #linkContact {
+          width: 100%;
+          text-align: center;
+          text-decoration: none;
+          cursor: pointer;
+          padding: 8px;
+          color: #ae57ff;
         }
       }
       .body-contact {
@@ -674,7 +692,12 @@ body {
           color: $text-color;
           border-radius: 8px 0px 0px 8px;
           padding: 24px;
-          background-color: $header-main;
+          background-color: color-mix(
+            in srgb,
+            $primary-color-solid 70%,
+            transparent
+          );
+          color: #d3d3d3;
           display: flex;
           align-items: start;
           flex-direction: column;
@@ -732,35 +755,41 @@ body {
             button {
               width: 100%;
               cursor: pointer;
-              background-color: $text-color;
+              background-color: $primary-color;
               color: $primary-color-solid;
               height: 48px;
               border-radius: 8px;
               outline: none;
-              border: 1px solid $text-color;
+              border: 1px solid #ae57ff;
               padding: 24px;
               align-items: center;
               display: flex;
               justify-content: center;
               p {
-                color: $primary-color-solid;
+                color: #ae57ff;
                 font-weight: bold;
               }
               &:hover {
-                border: 1px solid #c4a0b5;
-                background-color: $active-color;
+                border: 1px solid $text-color;
+                background-color: $text-color;
                 p {
-                  color: #c4a0b5;
+                  color: $primary-color-solid;
                 }
               }
             }
           }
         }
         .contact-right {
-          padding: 24px;
-          background-color: color-mix(in srgb, $header-main 90%, transparent);
+          padding: 12px;
+          background-color: color-mix(
+            in srgb,
+            $primary-color-solid 90%,
+            transparent
+          );
+          color: #d3d3d3;
           border-radius: 0px 8px 8px 0px;
           img {
+            border-radius: 12px;
             overflow: hidden;
             object-fit: cover;
             width: 500px;
@@ -795,7 +824,7 @@ body {
       svg {
         width: 25px;
         height: auto;
-        fill: $text-title-color;
+        fill: $text-color;
       }
     }
     .img-divider {
@@ -867,6 +896,7 @@ body {
         }
       }
       .container-data-body {
+        margin: 0px 0px 0px 0px;
         &#container-presentation {
           padding: 24px;
         }
