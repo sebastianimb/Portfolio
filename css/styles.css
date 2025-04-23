@@ -132,8 +132,11 @@ body {
   text-align: center;
   color: #afafaf;
 }
-.container-header .title .text {
+.container-header .title .text a {
+  cursor: pointer;
+  color: #afafaf;
   font-size: 32px;
+  text-decoration: none;
 }
 .container-header .img {
   z-index: 0;

@@ -166,7 +166,12 @@ body {
     text-align: center;
     color: $title_color;
     .text {
-      font-size: 32px;
+      a {
+        cursor: pointer;
+        color: $title_color;
+        font-size: 32px;
+        text-decoration: none;
+      }
     }
   }
   .img {
