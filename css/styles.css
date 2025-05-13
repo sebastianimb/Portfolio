@@ -487,7 +487,6 @@ body {
   opacity: 0.8;
   min-height: 500px;
   flex: 1 1 calc(33.3333333333% - 24px);
-  text-align: justify;
   display: flex;
   justify-content: center;
   flex-direction: column;
